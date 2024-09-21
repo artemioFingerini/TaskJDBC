@@ -59,4 +59,9 @@ public class User {
     public void setAge(Byte age) {
         this.age = age;
     }
+
+    @Override
+    public String toString() {
+        return "ID " + getId() + " NAME " + getName() + " LAST NAME " + getLastName() + " AGE " + getAge();
+    }
 }
