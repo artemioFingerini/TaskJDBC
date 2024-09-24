@@ -4,7 +4,6 @@ import jm.task.core.jdbc.dao.UserDao;
 import jm.task.core.jdbc.dao.UserDaoJDBCImpl;
 import jm.task.core.jdbc.model.User;
 
-import java.sql.SQLException;
 import java.util.List;
 
 public class UserServiceImpl implements UserService {
@@ -22,17 +21,18 @@ public class UserServiceImpl implements UserService {
         try {
             userDao.saveUser(name, lastName, age);
             System.out.println("User с именем — " + name + " добавлен в базу данных");
-        } catch (SQLException e) {
-            e.printStackTrace();
+        } catch (Exception e) {
+
         }
     }
+
 
     public void removeUserById(long id) {
         try {
             userDao.removeUserById(id);
             System.out.println("User с ID — " + id + " удален из базы данных");
-        } catch (SQLException e) {
-            e.printStackTrace();
+        } catch (Exception e) {
+
         }
     }
 
